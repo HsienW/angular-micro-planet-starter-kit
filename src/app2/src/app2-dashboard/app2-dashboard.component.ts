@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {GlobalEventDispatcher} from '@worktile/planet';
 
 @Component({
   selector: 'app2-dashboard',
@@ -8,7 +9,11 @@ import {Component, OnInit} from '@angular/core';
 export class App2DashboardComponent implements OnInit {
 
   constructor(
+    private globalEventDispatcher: GlobalEventDispatcher
   ) {
+    this.globalEventDispatcher.register('app-dispatcher-demo').subscribe((payload: string) => {
+      alert('I am app2, payload value: ' + payload);
+    });
   }
 
   ngOnInit() {
