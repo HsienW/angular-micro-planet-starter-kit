@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "serve:portal": "ng run portal:serve",
     "test": "ng test --progress=false --watch=false --code-coverage=true",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -12,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "8.2.0",
+    "@angular/cdk": "8.2.3",
     "@angular/common": "8.2.0",
     "@angular/compiler": "8.2.0",
     "@angular/core": "8.2.0",
@@ -25,13 +27,12 @@
     "zone.js": "0.9.1"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "8.2.0",
-    "@angular/cli": "8.2.0",
     "@angular-builders/custom-webpack": "8.4.1",
     "@angular-builders/dev-server": "7.3.1",
     "@angular-devkit/build-angular": "0.802.2",
     "@angular-devkit/build-ng-packagr": "0.803.20",
-    "typescript": "3.5.3",
+    "@angular/cli": "8.2.0",
+    "@angular/compiler-cli": "8.2.0",
     "@angular/language-service": "6.0.2",
     "@types/jasmine": "2.5.45",
     "@types/jasminewd2": "~2.0.3",
@@ -46,6 +47,8 @@
     "karma-jasmine-html-reporter": "1.5.1",
     "protractor": "5.3.0",
     "ts-node": "5.0.1",
-    "tslint": "5.9.1"
+    "tslint": "5.9.1",
+    "typescript": "3.5.3",
+    "webpack-assets-manifest": "3.1.1"
   }
 }
