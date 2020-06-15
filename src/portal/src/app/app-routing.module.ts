@@ -2,13 +2,20 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {EmptyComponent} from '@worktile/planet';
 
+import {HomeComponent} from '../home/home.component';
+
 const routes: Routes = [
   {
-    path: '**',
-    component: EmptyComponent
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: 'a-module',
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'app1',
     component: EmptyComponent,
     children: [
       {

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Planet, SwitchModes} from '@worktile/planet';
-// import {AppRootContext} from '../../../planet-controllers';
-// import {CustomSettingsService} from './custom-settings.service';
+import {AppRootContext} from '../../../planet-controllers';
+import {CustomSettingsService} from './custom-settings.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,11 @@ import {Planet, SwitchModes} from '@worktile/planet';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private planet: Planet) {
+  constructor(
+    public appRootContext: AppRootContext,
+    private customSettingsService: CustomSettingsService,
+    private planet: Planet
+  ) {
   }
 
   ngOnInit() {
@@ -21,24 +25,23 @@ export class AppComponent implements OnInit {
       }
     });
 
-    // this.appRootContext.setName('set root context');
+    this.appRootContext.setName('set root context');
 
-    // this.planet.setPortalAppData({
-    //   appRootContext: this.appRootContext
-    // });
+    this.planet.setPortalAppData({
+      appRootContext: this.appRootContext
+    });
 
-    // const settings = this.customSettingsService.get();
+    const settings = this.customSettingsService.get();
 
     this.planet.registerApps([
       {
-        name: 'stb',
+        name: 'app1',
         hostParent: '#app-host-container',
-        routerPathPrefix: '/avatar2/stb',
-        selector: 'stb-root-container',
-        resourcePathPrefix: '/static/stb',
-        preload: true,
-        // preload: settings.stb.preload,
-        // switchMode: settings.stb.switchMode,
+        routerPathPrefix: '/app1',
+        selector: 'app1-root-container',
+        resourcePathPrefix: '/static/app1',
+        preload: settings.app1.preload,
+        switchMode: settings.app1.switchMode,
         loadSerial: true,
         scripts: [
           'main.js'
@@ -46,12 +49,7 @@ export class AppComponent implements OnInit {
         styles: [
           // 'styles.css'
         ],
-        manifest: '/static/stb/manifest.json',
-        // extra: {
-        //   name: 'stb',
-        //   color: '#ffa415'
-        // }
-      }
+      },
     ]);
 
     this.planet.start();

@@ -5,9 +5,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgxPlanetModule} from '@worktile/planet';
 
+import {AppRootContext} from '../../../planet-controllers';
+
+import {HomeComponent} from '../home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -15,6 +20,7 @@ import {NgxPlanetModule} from '@worktile/planet';
     NgxPlanetModule,
   ],
   providers: [
+    AppRootContext
   ],
   bootstrap: [
     AppComponent
