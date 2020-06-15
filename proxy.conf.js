@@ -6,4 +6,10 @@ PROXY_CONFIG['/static/app1'] = {
     changeOrigin: true
 };
 
+PROXY_CONFIG['/static/app2'] = {
+  target: 'http://localhost:3002',
+  secure: false,
+  changeOrigin: true
+};
+
 module.exports = PROXY_CONFIG;
