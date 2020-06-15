@@ -23,6 +23,16 @@ const routes: Routes = [
         component: EmptyComponent
       }
     ]
+  },
+  {
+    path: 'app2',
+    component: EmptyComponent,
+    children: [
+      {
+        path: '**',
+        component: EmptyComponent
+      }
+    ]
   }
 ];
 

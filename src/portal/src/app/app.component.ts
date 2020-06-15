@@ -50,6 +50,22 @@ export class AppComponent implements OnInit {
           // 'styles.css'
         ],
       },
+      {
+        name: 'app2',
+        hostParent: '#app-host-container',
+        routerPathPrefix: '/app2',
+        selector: 'app2-root-container',
+        resourcePathPrefix: '/static/app2',
+        preload: settings.app2.preload,
+        switchMode: settings.app2.switchMode,
+        loadSerial: true,
+        scripts: [
+          'main.js'
+        ],
+        styles: [
+          // 'styles.css'
+        ],
+      },
     ]);
 
     this.planet.start();

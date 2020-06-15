@@ -9,6 +9,10 @@ export interface CustomSettingsInfo {
     preload: boolean;
     switchMode?: SwitchModes;
   };
+  app2: {
+    preload: boolean;
+    switchMode?: SwitchModes;
+  };
 }
 
 const DEFAULT_SETTINGS: CustomSettingsInfo = {
@@ -16,6 +20,10 @@ const DEFAULT_SETTINGS: CustomSettingsInfo = {
     preload: true,
     switchMode: SwitchModes.coexist
   },
+  app2: {
+    preload: true,
+    switchMode: SwitchModes.coexist
+  }
 };
 
 @Injectable({
