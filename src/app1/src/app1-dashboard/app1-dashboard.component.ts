@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {GlobalEventDispatcher} from '@worktile/planet';
-import {DomPortalOutlet} from '@angular/cdk/portal';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {GlobalEventDispatcher, PlanetComponentLoader} from '@worktile/planet';
 
 @Component({
   selector: 'app1-dashboard',
@@ -9,23 +8,29 @@ import {DomPortalOutlet} from '@angular/cdk/portal';
 })
 export class App1DashboardComponent implements OnInit {
 
-  private domPortalOutletCache = new WeakMap<any, DomPortalOutlet>();
+  loadingApp1Dashboard = false;
+
+  @ViewChild('container', {static: true}) containerElementRef: ElementRef<HTMLDivElement>;
 
   constructor(
-    private globalEventDispatcher: GlobalEventDispatcher
+    private globalEventDispatcher: GlobalEventDispatcher,
+    private planetComponentLoader: PlanetComponentLoader
   ) {
   }
 
   ngOnInit() {
   }
 
-  appDispatcherDemo() {
-    this.globalEventDispatcher.dispatch('app-dispatcher-demo', 'dispatcher from app1');
+  openApp2DashboardDemo() {
+    this.planetComponentLoader.load('app2', 'app2-dashboard-component', {
+      container: this.containerElementRef,
+      initialState: {}
+    });
+    this.loadingApp1Dashboard = true;
   }
 
-  openApp2DashboardDemo() {
-    // const container = this.getContainerElement(config);
-    // let portalOutlet = this.domPortalOutletCache.get(container);
+  dispatcherToApp2Action() {
+    this.globalEventDispatcher.dispatch('app-dispatcher-demo', 'dispatcher from app1');
   }
 
 }
