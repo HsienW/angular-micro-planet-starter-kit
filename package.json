@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run serve:portal\" \"npm run serve:app1\" \"npm run serve:app2\"",
     "serve:portal": "ng run portal:serve",
     "serve:app1": "ng serve app1 --deploy-url=/static/app1/",
     "serve:app2": "ng serve app2 --deploy-url=/static/app2/",
+    "start": "concurrently \"npm run serve:portal\" \"npm run serve:app1\" \"npm run serve:app2\"",
+    "start:app1": "concurrently \"npm run serve:portal\" \"npm run serve:app1\"",
+    "start:app2": "concurrently \"npm run serve:portal\" \"npm run serve:app2\"",
     "build": "npm run build:app1:prod && npm run build:app2:prod && npm run build:portal:prod",
     "build:portal:prod": "ng build --prod",
     "build:app1:prod": "ng build app1 --prod --deploy-url=/static/app1/",

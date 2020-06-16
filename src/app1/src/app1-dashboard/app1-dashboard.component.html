@@ -1,3 +1,11 @@
-<h2>app1-dashboard</h2>
-<button (click)="appDispatcherDemo()">Dispatcher demo</button>
-<button (click)="openApp2DashboardDemo()">Dispatcher demo</button>
+<h3>App1 Dashboard</h3>
+<br/>
+<h3>Case1: Open other app page</h3>
+<button (click)="openApp2DashboardDemo()">Open App2 Dashboard Demo</button>
+<ng-container ng-show="loadingApp1Dashboard">
+  <div #container></div>
+</ng-container>
+<br/>
+<h3>Case2: Dispatcher Action to other app</h3>
+<button (click)="dispatcherToApp2Action()">App1 Dispatcher Action To App2 Demo</button>
+
