@@ -1,7 +1,7 @@
 export class AppRootContext {
-    name: string;
+  name: string;
 
-    setName(name: string) {
-        this.name = name;
-    }
+  setName(name: string) {
+    this.name = name;
+  }
 }
