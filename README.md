@@ -19,7 +19,7 @@ npm start
 ```
 
 ## Development
-- Run `ng start` for a dev server. Navigate to `http://localhost:3000/`.
+- Run `npm start` for a dev server. Navigate to `http://localhost:3000/`.
 - Portal app default running to `http://localhost:3000/`.
 - Sub app1 default running to `http://localhost:3001/`.
 - Sub app2 default running to `http://localhost:3002/`.
