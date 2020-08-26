@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
         preload: settings.app1.preload,
         switchMode: settings.app1.switchMode,
         loadSerial: true,
+        manifest: '/static/app1/manifest.json',
         scripts: [
           'main.js'
         ],
@@ -59,6 +60,7 @@ export class AppComponent implements OnInit {
         preload: settings.app2.preload,
         switchMode: settings.app2.switchMode,
         loadSerial: true,
+        manifest: '/static/app2/manifest.json',
         scripts: [
           'main.js'
         ],
