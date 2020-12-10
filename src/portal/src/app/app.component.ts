@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
         name: 'app2',
         hostParent: '#app-host-container',
         routerPathPrefix: '/app2',
-        selector: 'app2-root-container',
+        selector: 'app2-root',
         resourcePathPrefix: '/static/app2',
         preload: settings.app2.preload,
         switchMode: settings.app2.switchMode,

@@ -6,8 +6,10 @@ import {NgxPlanetModule} from '@worktile/planet';
 import {routers} from './app1-root.routing';
 
 import {App1RouterOutletComponent} from './app1-router-outlet.component';
-import {App1DashboardComponent} from '../app1-dashboard/app1-dashboard.component';
 import {App1RootComponent} from './app1-root.component';
+import {App1DashboardComponent} from '../app1-dashboard/app1-dashboard.component';
+
+import {App1DashboardService} from '../app1-dashboard/app1-dashboard.service';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import {App1RootComponent} from './app1-root.component';
     NgxPlanetModule,
   ],
   providers: [
+    // App1DashboardService
   ],
   entryComponents: [],
   bootstrap: [App1RouterOutletComponent]

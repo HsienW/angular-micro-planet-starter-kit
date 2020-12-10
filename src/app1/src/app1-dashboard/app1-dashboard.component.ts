@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GlobalEventDispatcher, PlanetComponentLoader} from '@worktile/planet';
+// import {App1DashboardService} from './app1-dashboard.service';
 
 @Component({
   selector: 'app1-dashboard',
@@ -13,12 +14,14 @@ export class App1DashboardComponent implements OnInit {
   @ViewChild('container', {static: true}) containerElementRef: ElementRef<HTMLDivElement>;
 
   constructor(
+    // private app1DashboardService: App1DashboardService,
     private globalEventDispatcher: GlobalEventDispatcher,
     private planetComponentLoader: PlanetComponentLoader
   ) {
   }
 
   ngOnInit() {
+    // this.app1DashboardService.test();
   }
 
   openApp2DashboardDemo() {

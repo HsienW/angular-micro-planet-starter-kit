@@ -5,25 +5,29 @@ import {NgxPlanetModule, PlanetComponentLoader, GlobalEventDispatcher} from '@wo
 
 import {routers} from './app2-root.routing';
 
-import {App2RouterOutletComponent} from './app2-router-outlet.component';
+import {App2RouterOutletComponent} from '../app2-router-outlet/app2-router-outlet.component';
 import {App2DashboardComponent} from '../app2-dashboard/app2-dashboard.component';
 import {App2RootComponent} from './app2-root.component';
+
+// import {App2DashboardService} from '../app2-dashboard/app2-dashboard.service';
 
 
 @NgModule({
   declarations: [
     App2RouterOutletComponent,
     App2RootComponent,
-    App2DashboardComponent
+    // App2DashboardComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routers),
     NgxPlanetModule,
   ],
-  providers: [],
+  providers: [
+    // App2DashboardService
+  ],
   entryComponents: [],
-  bootstrap: [App2RouterOutletComponent]
+  bootstrap: [App2RootComponent]
 })
 export class App2RootModule {
   constructor(

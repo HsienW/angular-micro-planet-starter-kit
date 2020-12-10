@@ -1,22 +1,26 @@
 import {Route} from '@angular/router';
 import {EmptyComponent} from '@worktile/planet';
-import {App2DashboardComponent} from '../app2-dashboard/app2-dashboard.component';
-import {App2RootComponent} from './app2-root.component';
+// import {App2DashboardComponent} from '../app2-dashboard/app2-dashboard.component';
+import {App2RouterOutletComponent} from '../app2-router-outlet/app2-router-outlet.component';
 
 export const routers: Route[] = [
   {
     path: 'app2',
-    component: App2RootComponent,
+    component: App2RouterOutletComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'app2',
-        pathMatch: 'full'
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'app2',
+      //   pathMatch: 'full'
+      // },
       {
         path: 'dashboard',
-        component: App2DashboardComponent
-      }
+        loadChildren: () => import('../app2-dashboard/app2-dashboard.module').then(m => m.App2DashboardModule)
+      },
+      // {
+      //   path: 'dashboard',
+      //   component: App2DashboardComponent
+      // }
     ]
   },
   {

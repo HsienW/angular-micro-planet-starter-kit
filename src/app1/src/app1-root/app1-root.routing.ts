@@ -1,6 +1,5 @@
 import {Route} from '@angular/router';
 import {EmptyComponent} from '@worktile/planet';
-import {App1DashboardComponent} from '../app1-dashboard/app1-dashboard.component';
 import {App1RootComponent} from './app1-root.component';
 
 export const routers: Route[] = [
@@ -13,10 +12,14 @@ export const routers: Route[] = [
         redirectTo: 'app1',
         pathMatch: 'full'
       },
-      {
-        path: 'dashboard',
-        component: App1DashboardComponent
-      }
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: () => import('../app1-dashboard/app1-dashboard.module').then(m => m.App1DashboardModule)
+      // },
+      // {
+        // path: 'dashboard',
+        // component: App1DashboardComponent
+      // }
     ]
   },
   {
