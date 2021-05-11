@@ -30,7 +30,7 @@
     "@angular/platform-browser-dynamic": "8.2.0",
     "@angular/router": "8.2.0",
     "@worktile/planet": "1.1.2",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "rxjs": "6.5.3",
     "zone.js": "0.9.1"
   },
